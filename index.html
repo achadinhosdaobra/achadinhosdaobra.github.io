@@ -1,0 +1,226 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="Achadinhos da Obra: as ferramentas e materiais dos nossos vídeos, com link direto para o Mercado Livre."><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title data-p>Achadinhos da Obra</title>
+<meta name="claude:viewport-fit-sides" content="cover" data-p>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" data-p>
+<style data-p>
+/* Layout: catálogo de oficina — cabeçalho com nome e aviso de afiliado, busca, e uma seção por vídeo com grade de cards de produto */
+:root{
+  --bg:#f2f4f7; --surface:#ffffff; --ink:#14203a; --muted:#5d6a82; --line:#dde2ea;
+  --accent:#e8620f; --accent-ink:#ffffff; --tag:#fff1e6; --ok:#1a7f4b;
+  --display:"Archivo","Arial Narrow",system-ui,sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f141f;--surface:#171e2c;--ink:#e8ecf4;--muted:#9aa6bd;--line:#29324a;--accent:#ff7a2b;--accent-ink:#1a0d03;--tag:#2c1d12;--ok:#4cc38a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f141f;--surface:#171e2c;--ink:#e8ecf4;--muted:#9aa6bd;--line:#29324a;--accent:#ff7a2b;--accent-ink:#1a0d03;--tag:#2c1d12;--ok:#4cc38a;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55}
+button,input,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding-block:28px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:28px}
+header.top{display:flex;flex-direction:column;gap:10px;border-bottom:3px solid var(--ink);padding-bottom:18px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display);font-stretch:80%;font-weight:800;font-size:clamp(32px,6vw,52px);line-height:1;margin:0;text-wrap:balance;letter-spacing:-.01em}
+.lead{margin:0;color:var(--muted);max-width:62ch}
+.disc{font-size:13px;color:var(--muted);background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);padding:8px 12px;border-radius:6px;max-width:72ch}
+.search{display:flex;gap:10px;align-items:center}
+.search input{flex:1;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+section.video{display:flex;flex-direction:column;gap:14px;scroll-margin-top:16px}
+.vh{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.vh h2{font-family:var(--display);font-stretch:85%;font-weight:750;font-size:clamp(22px,3.4vw,30px);line-height:1.1;margin:0;text-wrap:balance;max-width:28ch}
+.vh .num{font-family:var(--mono);font-size:12px;color:var(--muted);display:block;margin-bottom:4px}
+.link{color:var(--accent);font-weight:600;text-decoration:none;white-space:nowrap}
+.link:hover{text-decoration:underline}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.mono-tile{width:44px;height:44px;border-radius:8px;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:18px;color:#fff;flex:none}
+.card .hd{display:flex;gap:12px;align-items:center}
+.card h3{margin:0;font-size:16px;font-weight:600;line-height:1.3}
+.card p{margin:0;font-size:14px;color:var(--muted)}
+.price{font-family:var(--mono);font-size:13px;background:var(--tag);color:var(--ink);align-self:flex-start;padding:2px 8px;border-radius:4px}
+.buy{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:9px 14px;font-weight:600;font-size:14px;cursor:pointer;text-decoration:none;border:1px solid var(--line);background:var(--surface);white-space:nowrap}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn.sm{padding:5px 10px;font-size:13px}
+.btn.danger{color:#c4314b}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.buy .btn{flex:1}
+.empty{border:2px dashed var(--line);border-radius:10px;padding:28px;text-align:center;color:var(--muted)}
+footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+
+/* Área do dono */
+.adminbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ink);color:var(--bg);border-radius:10px;padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.adminbar .btn{background:transparent;color:var(--bg);border-color:#ffffff40}
+.adminbar .btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.adminbar .msg{font-size:13px;opacity:.85;margin-right:auto}
+.ed{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:12px}
+.ed h3{margin:0;font-family:var(--display);font-stretch:85%;font-size:20px}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+label.f{display:flex;flex-direction:column;gap:4px;font-size:12px;font-weight:600;color:var(--muted);min-width:0}
+label.f.full{grid-column:1/-1}
+.ed input,.ed textarea{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:7px 9px;width:100%;min-width:0}
+.ed textarea{font-family:var(--body);font-size:14px}
+.ed textarea#imp{font-family:var(--mono);font-size:12px}
+.prod{border:1px solid var(--line);border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:8px}
+.prod .row{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.pend{font-size:12px;font-weight:600;color:#b45309}
+.okk{font-size:12px;font-weight:600;color:var(--ok)}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:8px;z-index:9;max-width:calc(100% - 32px)}
+@media (max-width:560px){.fields{grid-template-columns:1fr}}
+</style>
+<div id="app" data-p></div>
+<div id="toast" class="toast" data-p hidden></div>
+<script type="application/json" id="data" data-p>{"store": {"nome": "Achadinhos da Obra", "descricao": "As ferramentas e materiais que aparecem nos nossos vídeos, com link direto para comprar no Mercado Livre ou na Shopee.", "aviso": "Alguns links desta página são links de afiliado: se você comprar por eles, o canal pode receber uma comissão, sem custo extra para você.", "url": "https://achadinhosdaobra.github.io/"}, "videos": [{"id": "wnt3wm", "titulo": "Disjuntor errado: o risco escondido no seu quadro", "youtube": "https://youtu.be/bbAfxU96uEc", "produtos": [{"nome": "Tomada Inteligente Wi-Fi com Medidor de Consumo (Bivolt)", "porque": "Mostra no celular quanto cada aparelho consome. Bivolt, nota 4,9, a mais vendida da categoria. Aguenta até 1.100 W em 127V ou 2.200 W em 220V: use em TV, geladeira, micro-ondas e computador, nunca em chuveiro, forno ou aquecedor.", "preco": "≈ R$ 40 a 60", "ml": "https://meli.la/1CgTAg5", "shopee": ""}, {"nome": "Termômetro Infravermelho Industrial com mira laser (até 400 °C)", "porque": "Detecta tomada e disjuntor esquentando sem encostar a mão. O mais vendido da categoria, nota 4,8. Serve também para cozinha e churrasco.", "preco": "≈ R$ 35 a 70", "ml": "https://meli.la/1fTDAeh", "shopee": ""}]}, {"id": "pfycof", "titulo": "Alicate True RMS ou comum? Não compre errado", "youtube": "https://youtu.be/faiEdsumYlw", "produtos": [{"nome": "Alicate Amperímetro AstroAI True RMS (CA e CC, 400A)", "porque": "True RMS de verdade e mede corrente CA e CC. Nota 4,9, mais de mil vendidos, loja oficial.", "preco": "≈ R$ 135 a 215", "ml": "https://meli.la/1e8ABj1", "shopee": ""}, {"nome": "Multímetro Minipa ET-1507B (True RMS, CAT III)", "porque": "Mede certo em equipamentos modernos", "preco": "≈ R$ 160 a 230", "ml": "https://meli.la/2ndx79t", "shopee": ""}]}]}</script>
+<script id="main" data-p>
+let D = JSON.parse(document.getElementById('data').textContent);
+let admin = false, editing = false, dirty = false, art = null, q = '';
+
+function h(tag, props, ...kids){
+  const el = document.createElement(tag);
+  for(const [k,v] of Object.entries(props||{})){
+    if(v==null || v===false) continue;
+    if(k==='class') el.className=v; else if(k==='text') el.textContent=v; else if(k==='style') el.style.cssText=v;
+    else if(k.startsWith('on')) el.addEventListener(k.slice(2), v); else el.setAttribute(k, v===true?'':v);
+  }
+  for(const c of kids.flat()){ if(c==null || c===false) continue; el.append(c instanceof Node ? c : document.createTextNode(String(c))); }
+  return el;
+}
+let tt; function toast(m){ const t=document.getElementById('toast'); t.textContent=m; t.hidden=false; clearTimeout(tt); tt=setTimeout(()=>t.hidden=true,4200); }
+async function copy(text){ try{ await navigator.clipboard.writeText(text); toast('Copiado.'); }catch(e){ toast('Não deu para copiar automaticamente: ' + text); } }
+const uid = () => Math.random().toString(36).slice(2,8);
+const safeUrl = u => { try{ const x = new URL(String(u||'').trim()); return /^https?:$/.test(x.protocol) ? x.href : null; }catch(e){ return null; } };
+function hue(s){ let n=0; for(const c of String(s)) n=(n*31+c.charCodeAt(0))%360; return n; }
+const hasLink = p => safeUrl(p.ml) || safeUrl(p.shopee);
+function mark(){ dirty = true; renderBar(); }
+
+/* ---------- vitrine pública ---------- */
+function productCard(p){
+  const ml = safeUrl(p.ml), sh = safeUrl(p.shopee);
+  return h('article',{class:'card'},
+    h('div',{class:'hd'}, h('div',{class:'mono-tile', style:`background:hsl(${hue(p.nome)} 55% 42%)`, 'aria-hidden':'true', text:String(p.nome||'?').trim().charAt(0).toUpperCase()}), h('h3',{text:p.nome})),
+    p.porque ? h('p',{text:p.porque}) : null,
+    p.preco ? h('span',{class:'price', text:p.preco}) : null,
+    h('div',{class:'buy'},
+      ml ? h('a',{class:'btn primary', href:ml, target:'_blank', rel:'noopener sponsored', text:'Mercado Livre'}) : null,
+      sh ? h('a',{class:'btn', href:sh, target:'_blank', rel:'noopener sponsored', text:'Shopee'}) : null)
+  );
+}
+function publicView(){
+  const term = q.trim().toLowerCase();
+  const vids = D.videos.map(v=>({v, prods:(v.produtos||[]).filter(p=>hasLink(p) && (!term || (v.titulo+' '+p.nome+' '+(p.porque||'')).toLowerCase().includes(term)))})).filter(x=>x.prods.length);
+  const search = h('input',{id:'busca', type:'search', placeholder:'Buscar ferramenta ou vídeo', 'aria-label':'Buscar ferramenta ou vídeo', oninput:e=>{ q=e.target.value; const r=document.getElementById('results'); r.replaceChildren(...results()); }});
+  search.value = q;
+  function results(){
+    const list = D.videos.map(v=>({v, prods:(v.produtos||[]).filter(p=>hasLink(p) && (!q.trim() || (v.titulo+' '+p.nome+' '+(p.porque||'')).toLowerCase().includes(q.trim().toLowerCase())))})).filter(x=>x.prods.length);
+    if(!list.length) return [h('div',{class:'empty', text: D.videos.some(v=>(v.produtos||[]).some(hasLink)) ? 'Nada encontrado com essa busca.' : 'Em breve: as ferramentas dos nossos vídeos aparecem aqui.'})];
+    return list.map(({v,prods})=>h('section',{class:'video', id:'v-'+v.id},
+      h('div',{class:'vh'}, h('div',{}, h('span',{class:'num', text:'FERRAMENTAS DO VÍDEO'}), h('h2',{text:v.titulo})),
+        safeUrl(v.youtube) ? h('a',{class:'link', href:safeUrl(v.youtube), target:'_blank', rel:'noopener', text:'Assistir no YouTube ↗'}) : null),
+      h('div',{class:'grid'}, prods.map(productCard))));
+  }
+  return [
+    h('header',{class:'top'}, h('span',{class:'eyebrow', text:'Vitrine'}), h('h1',{text:D.store.nome}), h('p',{class:'lead', text:D.store.descricao}), h('div',{class:'disc', text:D.store.aviso})),
+    vids.length || D.videos.length ? h('div',{class:'search'}, search) : null,
+    h('div',{id:'results', style:'display:flex;flex-direction:column;gap:36px'}, results()),
+    h('footer',{text:'Preços e disponibilidade são definidos pelas lojas e podem mudar.'})
+  ];
+}
+
+/* ---------- edição (só o dono vê) ---------- */
+function field(obj, key, label, opts={}){
+  const el = opts.area ? h('textarea',{rows:opts.rows||'3'}) : h('input',{type:'text', placeholder:opts.ph||''});
+  el.id = 'f-'+uid(); el.value = obj[key] || '';
+  el.addEventListener('input', ()=>{ obj[key] = el.value; mark(); });
+  return h('label',{class:'f'+(opts.full?' full':''), for:el.id}, label, el);
+}
+function importar(text){
+  let j; try{ j = JSON.parse(text); }catch(e){ return toast('Não reconheci o conteúdo. Cole o texto copiado na Fábrica (botão "Copiar para a vitrine").'); }
+  if(!j || !j.titulo || !Array.isArray(j.produtos)) return toast('O conteúdo colado não tem título e produtos.');
+  D.videos.unshift({id:uid(), titulo:String(j.titulo), youtube:'', produtos:j.produtos.map(p=>({nome:String(p.nome||''), porque:String(p.porque||''), preco:String(p.faixa_preco||p.preco||''), busca:String(p.busca||''), ml:'', shopee:''}))});
+  mark(); render(); toast('Vídeo importado. Agora cole seus links de afiliado em cada produto.');
+}
+function searchLinks(p){
+  const t = String(p.busca || p.nome || '').trim(); if(!t) return null;
+  return h('span',{style:'font-size:12px;color:var(--muted)'}, 'Achar o produto: ',
+    h('a',{class:'link', href:'https://lista.mercadolivre.com.br/'+encodeURIComponent(t.replace(/\s+/g,'-')), target:'_blank', rel:'noopener', text:'Mercado Livre'}), ' · ',
+    h('a',{class:'link', href:'https://shopee.com.br/search?keyword='+encodeURIComponent(t), target:'_blank', rel:'noopener', text:'Shopee'}));
+}
+function editView(){
+  const paste = h('textarea',{id:'imp', rows:'4', placeholder:'Cole aqui o texto copiado na Fábrica (botão "Copiar para a vitrine")'});
+  return [
+    h('header',{class:'top'}, h('span',{class:'eyebrow', text:'Editando a vitrine'}), h('h1',{text:D.store.nome})),
+    h('div',{class:'ed'}, h('h3',{text:'Dados da vitrine'}),
+      h('div',{class:'fields'}, field(D.store,'nome','Nome da vitrine'), field(D.store,'url','Link público desta vitrine', {ph:'Cole o link público gerado no botão Compartilhar'}),
+        field(D.store,'descricao','Descrição', {area:true, full:true, rows:'2'}), field(D.store,'aviso','Aviso de afiliado (obrigatório pelo CONAR)', {area:true, full:true, rows:'2'}))),
+    h('div',{class:'ed'}, h('h3',{text:'Adicionar vídeo'}), paste,
+      h('div',{style:'display:flex;gap:8px;flex-wrap:wrap'}, h('button',{class:'btn primary sm', onclick:()=>importar(paste.value), text:'Importar da Fábrica'}),
+        h('button',{class:'btn sm', onclick:()=>{ D.videos.unshift({id:uid(), titulo:'Novo vídeo', youtube:'', produtos:[]}); mark(); render(); }, text:'Adicionar vídeo em branco'}))),
+    D.videos.length ? null : h('div',{class:'empty', text:'Nenhum vídeo ainda. Importe o primeiro pela Fábrica.'}),
+    ...D.videos.map((v,vi)=>{
+      const pend = (v.produtos||[]).filter(p=>!hasLink(p)).length;
+      return h('div',{class:'ed'},
+        h('div',{class:'prod row', style:'border:0;padding:0;flex-direction:row'}, h('h3',{text:v.titulo || 'Sem título'}),
+          h('div',{style:'display:flex;gap:6px;flex-wrap:wrap'},
+            D.store.url ? h('button',{class:'btn sm', onclick:()=>copy(D.store.url.split('#')[0]+'#v-'+v.id), text:'Copiar link deste vídeo'}) : null,
+            h('button',{class:'btn sm danger', onclick:e=>{ const b=e.currentTarget; if(b.dataset.c){ D.videos.splice(vi,1); mark(); render(); } else { b.dataset.c='1'; b.textContent='Clique de novo para excluir'; } }, text:'Excluir vídeo'}))),
+        h('div',{class:'fields'}, field(v,'titulo','Título do vídeo'), field(v,'youtube','Link do vídeo no YouTube', {ph:'https://youtu.be/...'})),
+        h('span',{class: pend ? 'pend' : 'okk', text: pend ? `${pend} produto(s) sem link — não aparecem para o público` : 'Todos os produtos com link'}),
+        ...(v.produtos||[]).map((p,pi)=>h('div',{class:'prod'},
+          h('div',{class:'row'}, h('strong',{text:`${pi+1}. ${p.nome || 'Produto'}`}),
+            h('div',{style:'display:flex;gap:6px'},
+              h('button',{class:'btn sm', 'aria-label':'Subir produto', title:'Subir', disabled: pi===0, onclick:()=>{ const a=v.produtos; [a[pi-1],a[pi]]=[a[pi],a[pi-1]]; mark(); render(); }, text:'↑'}),
+              h('button',{class:'btn sm', 'aria-label':'Descer produto', title:'Descer', disabled: pi===v.produtos.length-1, onclick:()=>{ const a=v.produtos; [a[pi+1],a[pi]]=[a[pi],a[pi+1]]; mark(); render(); }, text:'↓'}),
+              h('button',{class:'btn sm danger', onclick:()=>{ v.produtos.splice(pi,1); mark(); render(); }, text:'Remover'}))),
+          h('div',{class:'fields'}, field(p,'nome','Nome'), field(p,'preco','Faixa de preço', {ph:'≈ R$ 80 a 150'}), field(p,'porque','Por que aparece no vídeo', {full:true}),
+            field(p,'ml','Seu link de afiliado — Mercado Livre', {ph:'https://meli.la/...'}), field(p,'shopee','Seu link de afiliado — Shopee', {ph:'https://s.shopee.com.br/...'})),
+          searchLinks(p))),
+        h('button',{class:'btn sm', style:'align-self:flex-start', onclick:()=>{ (v.produtos=v.produtos||[]).push({nome:'', porque:'', preco:'', ml:'', shopee:''}); mark(); render(); }, text:'+ Produto'}));
+    })
+  ];
+}
+
+/* ---------- salvar ---------- */
+function buildDoc(){
+  const reset = document.head.querySelector('style')?.textContent || '';
+  const parts = [...document.body.children].filter(e=>e.hasAttribute('data-p')).map(e=>{
+    if(e.id==='data') return '<script type="application/json" id="data" data-p>' + JSON.stringify(D).replace(/</g,'\\u003c') + '<\/script>';
+    if(e.id==='app') return '<div id="app" data-p></div>';
+    if(e.id==='toast') return '<div id="toast" class="toast" data-p hidden></div>';
+    return e.outerHTML;
+  });
+  return '<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>' + reset + '</style></head><body>' + parts.join('') + '</body></html>';
+}
+let saving = false;
+async function publicar(){
+  if(!art || saving) return;
+  saving = true; renderBar();
+  try{ await art.publish(buildDoc()); dirty = false; toast('Vitrine publicada.'); }
+  catch(e){
+    const m = {conflict:'Outra versão foi salva ao mesmo tempo. A página vai recarregar; refaça a última alteração.', not_writer:'Você não tem permissão para publicar esta vitrine.', not_granted:'Você não tem permissão para publicar esta vitrine.', rate_limited:'Muitas publicações seguidas. Espere um minuto.'}[e?.code];
+    toast(m || 'Não foi possível publicar. Tente de novo.');
+  }
+  saving = false; renderBar();
+}
+
+/* ---------- render ---------- */
+function renderBar(){
+  const bar = document.getElementById('adminbar'); if(!bar) return;
+  bar.replaceChildren(
+    h('span',{class:'msg', text: saving ? 'Publicando…' : dirty ? 'Alterações não publicadas' : editing ? 'Modo edição' : 'Só você vê esta barra'}),
+    h('button',{class:'btn sm', onclick:()=>{ editing=!editing; render(); window.scrollTo(0,0); }, text: editing ? 'Ver como visitante' : 'Editar vitrine'}),
+    dirty ? h('button',{class:'btn sm primary', disabled:saving, onclick:publicar, text:'Publicar alterações'}) : '');
+}
+function render(){
+  const app = document.getElementById('app');
+  app.replaceChildren(h('div',{class:'wrap'}, admin ? h('div',{class:'adminbar', id:'adminbar'}) : null, ...(editing ? editView() : publicView()).filter(Boolean)));
+  renderBar();
+}
+render();
+if(location.hash.startsWith('#v-')){ const el = document.getElementById(location.hash.slice(1)); if(el) el.scrollIntoView(); }
+window.addEventListener('beforeunload', e=>{ if(dirty){ e.preventDefault(); e.returnValue=''; } });
+
+(async()=>{
+  const c = window.claude; if(!c || typeof c.use!=='function') return;
+  const [u, a] = await Promise.all([c.use('user').catch(()=>null), c.use('artifact').catch(()=>null)]);
+  let can = false; try{ can = !!(u && await u.canEdit()); }catch(e){}
+  if(a && can){ art = a; admin = true; render(); }
+})();
+</script>
+</body></html>
