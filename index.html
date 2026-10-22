@@ -1,237 +1,372 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="Achadinhos da Obra: as ferramentas e materiais dos nossos vídeos, com link direto para o Mercado Livre."><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title data-p>Achadinhos da Obra</title>
-<meta name="claude:viewport-fit-sides" content="cover" data-p>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" data-p>
-<style data-p>
-/* Layout: catálogo de oficina — cabeçalho com nome e aviso de afiliado, busca, e uma seção por vídeo com grade de cards de produto */
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Achadinhos da Obra · Ferramentas e materiais elétricos</title>
+<meta name="description" content="Ferramentas e materiais elétricos indicados nos vídeos do Achadinhos da Obra, com compra segura pelo Mercado Livre.">
+<meta property="og:title" content="Achadinhos da Obra">
+<meta property="og:description" content="Ferramentas e materiais elétricos testados e indicados, com compra segura pelo Mercado Livre.">
+<meta name="theme-color" content="#0b1020">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23ffc93c'/%3E%3Ccircle cx='32' cy='32' r='24' fill='%230b1020'/%3E%3Cpath d='M36 10 22 36h9l-4 18 15-26h-9z' fill='%23ffc93c'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,600..900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
 :root{
-  --bg:#f2f4f7; --surface:#ffffff; --ink:#14203a; --muted:#5d6a82; --line:#dde2ea;
-  --accent:#e8620f; --accent-ink:#ffffff; --tag:#fff1e6; --ok:#1a7f4b;
+  --navy:#0b1020; --navy-2:#141c33; --yellow:#ffc93c; --orange:#f06e1e; --orange-ink:#ffffff;
+  --bg:#f3f4f7; --surface:#ffffff; --ink:#121a2e; --muted:#5c6780; --line:#dfe3ea; --chip:#eef0f5;
+  --ok:#14804a;
   --display:"Archivo","Arial Narrow",system-ui,sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",Consolas,monospace;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f141f;--surface:#171e2c;--ink:#e8ecf4;--muted:#9aa6bd;--line:#29324a;--accent:#ff7a2b;--accent-ink:#1a0d03;--tag:#2c1d12;--ok:#4cc38a;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0f141f;--surface:#171e2c;--ink:#e8ecf4;--muted:#9aa6bd;--line:#29324a;--accent:#ff7a2b;--accent-ink:#1a0d03;--tag:#2c1d12;--ok:#4cc38a;color-scheme:dark}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1424;--surface:#161e33;--ink:#e9edf6;--muted:#9ba6bf;--line:#28324d;--chip:#1e2840;--ok:#4cc38a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1424;--surface:#161e33;--ink:#e9edf6;--muted:#9ba6bf;--line:#28324d;--chip:#1e2840;--ok:#4cc38a;color-scheme:dark}
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55}
-button,input,textarea{font:inherit;color:inherit}
-:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.wrap{max-width:1080px;margin:0 auto;padding-block:28px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:28px}
-header.top{display:flex;flex-direction:column;gap:10px;border-bottom:3px solid var(--ink);padding-bottom:18px}
-.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
-h1{font-family:var(--display);font-stretch:80%;font-weight:800;font-size:clamp(32px,6vw,52px);line-height:1;margin:0;text-wrap:balance;letter-spacing:-.01em}
-.lead{margin:0;color:var(--muted);max-width:62ch}
-.disc{font-size:13px;color:var(--muted);background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);padding:8px 12px;border-radius:6px;max-width:72ch}
-.search{display:flex;gap:10px;align-items:center}
-.search input{flex:1;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
-section.video{display:flex;flex-direction:column;gap:14px;scroll-margin-top:16px}
-.vh{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
-.vh h2{font-family:var(--display);font-stretch:85%;font-weight:750;font-size:clamp(22px,3.4vw,30px);line-height:1.1;margin:0;text-wrap:balance;max-width:28ch}
-.vh .num{font-family:var(--mono);font-size:12px;color:var(--muted);display:block;margin-bottom:4px}
-.link{color:var(--accent);font-weight:600;text-decoration:none;white-space:nowrap}
-.link:hover{text-decoration:underline}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0}
-.mono-tile{width:44px;height:44px;border-radius:8px;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:18px;color:#fff;flex:none}
-.card .hd{display:flex;gap:12px;align-items:center}
-.card h3{margin:0;font-size:16px;font-weight:600;line-height:1.3}
-.card p{margin:0;font-size:14px;color:var(--muted)}
-.price{font-family:var(--mono);font-size:13px;background:var(--tag);color:var(--ink);align-self:flex-start;padding:2px 8px;border-radius:4px}
-.buy{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:9px 14px;font-weight:600;font-size:14px;cursor:pointer;text-decoration:none;border:1px solid var(--line);background:var(--surface);white-space:nowrap}
-.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
-.btn.sm{padding:5px 10px;font-size:13px}
-.btn.danger{color:#c4314b}
-.btn:disabled{opacity:.5;cursor:not-allowed}
-.buy .btn{flex:1}
-.chips{display:flex;gap:8px;flex-wrap:wrap}
-.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:600;cursor:pointer}
-.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-section.cat{display:flex;flex-direction:column;gap:14px}
-.empty{border:2px dashed var(--line);border-radius:10px;padding:28px;text-align:center;color:var(--muted)}
-footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+[hidden]{display:none!important}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 
-/* Área do dono */
-.adminbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ink);color:var(--bg);border-radius:10px;padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.adminbar .btn{background:transparent;color:var(--bg);border-color:#ffffff40}
-.adminbar .btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
-.adminbar .msg{font-size:13px;opacity:.85;margin-right:auto}
-.ed{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:12px}
-.ed h3{margin:0;font-family:var(--display);font-stretch:85%;font-size:20px}
-.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-label.f{display:flex;flex-direction:column;gap:4px;font-size:12px;font-weight:600;color:var(--muted);min-width:0}
-label.f.full{grid-column:1/-1}
-.ed input,.ed textarea{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:7px 9px;width:100%;min-width:0}
-.ed textarea{font-family:var(--body);font-size:14px}
-.ed textarea#imp{font-family:var(--mono);font-size:12px}
-.prod{border:1px solid var(--line);border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:8px}
-.prod .row{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
-.pend{font-size:12px;font-weight:600;color:#b45309}
-.okk{font-size:12px;font-weight:600;color:var(--ok)}
-.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:8px;z-index:9;max-width:calc(100% - 32px)}
-@media (max-width:560px){.fields{grid-template-columns:1fr}}
+/* faixa de confiança */
+.trustbar{background:var(--yellow);color:var(--navy);font-size:13px;font-weight:600}
+.trustbar .wrap{display:flex;gap:6px 22px;flex-wrap:wrap;justify-content:center;padding-block:7px;text-align:center}
+.trustbar span{display:inline-flex;align-items:center;gap:6px}
+
+/* cabeçalho */
+.hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:10px;
+  background:repeating-linear-gradient(-45deg,var(--yellow) 0 18px,var(--navy) 18px 36px)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand svg{width:52px;height:52px;flex:none}
+.brand b{font-family:var(--display);font-stretch:78%;font-weight:900;font-size:24px;line-height:.95;letter-spacing:.01em;text-transform:uppercase}
+.brand b span{color:var(--yellow);display:block}
+.nav nav{display:flex;gap:6px;flex-wrap:wrap}
+.nav nav a{text-decoration:none;font-weight:600;font-size:14px;padding:8px 12px;border-radius:8px;color:#d7deee}
+.nav nav a:hover{background:#ffffff14;color:#fff}
+.hero-in{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;padding-block:28px 64px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--yellow)}
+.hero-in>div{min-width:0}
+.hero h1{overflow-wrap:break-word;font-family:var(--display);font-stretch:78%;font-weight:900;font-size:clamp(30px,6.2vw,64px);line-height:.98;margin:10px 0 14px;text-transform:uppercase;text-wrap:balance}
+.hero h1 em{font-style:normal;color:var(--yellow)}
+.hero p.lead{margin:0 0 22px;color:#c5cde0;max-width:54ch;font-size:16px}
+.searchbox{display:flex;background:#fff;border-radius:12px;padding:6px;gap:6px;max-width:560px;box-shadow:0 10px 30px #0006}
+.searchbox input{flex:1;min-width:0;border:0;background:transparent;color:#121a2e;padding:10px 12px;font-size:16px}
+.searchbox input:focus{outline:none}
+.searchbox button{background:var(--orange);color:#fff;border:0;border-radius:9px;padding:10px 18px;font-weight:700;cursor:pointer}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.stat{background:#ffffff12;border:1px solid #ffffff22;border-radius:999px;padding:6px 12px;font-size:13px;color:#dfe5f2}
+.stat b{color:var(--yellow)}
+.hero-card{background:var(--navy-2);border:1px solid #ffffff1f;border-radius:18px;padding:18px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.hero-card .mini{background:#fff;border-radius:12px;aspect-ratio:1;display:grid;place-items:center;padding:10px;overflow:hidden}
+.hero-card .mini img{width:100%;height:100%;object-fit:contain}
+
+/* categorias */
+main{display:flex;flex-direction:column;gap:40px;padding-block:32px 56px}
+.sec-h{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.sec-h h2{font-family:var(--display);font-stretch:80%;font-weight:900;font-size:clamp(26px,3.6vw,36px);line-height:1;margin:0;text-transform:uppercase}
+.sec-h p{margin:4px 0 0;color:var(--muted)}
+.cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.cat{display:flex;flex-direction:column;align-items:flex-start;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;cursor:pointer;text-align:left;transition:transform .15s,border-color .15s}
+.cat:hover{transform:translateY(-2px);border-color:var(--orange)}
+.cat[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.cat .ico{width:40px;height:40px;border-radius:10px;background:var(--yellow);color:var(--navy);display:grid;place-items:center}
+.cat .ico svg{width:24px;height:24px}
+.cat b{font-size:14px;line-height:1.25}
+.cat small{color:var(--muted);font-size:12px}
+.cat[aria-pressed="true"] small{color:#c5cde0}
+
+/* filtros */
+.toolbar{position:sticky;top:0;z-index:4;background:var(--bg);padding-block:10px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--line)}
+.toolbar input[type=search]{flex:1 1 220px;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:9px 12px}
+.toolbar select{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:9px 10px}
+.toolbar label.chk{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px 12px;cursor:pointer}
+.toolbar .count{font-size:13px;color:var(--muted);margin-left:auto;white-space:nowrap}
+.btn-clear{background:none;border:0;color:var(--orange);font-weight:700;cursor:pointer;padding:6px}
+
+/* produtos */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;margin-top:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;min-width:0;transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 30px #0b10201f}
+.card .img{position:relative;background:#fff;aspect-ratio:1/1;display:grid;place-items:center;padding:18px;border-bottom:1px solid var(--line)}
+.card .img img{width:100%;height:100%;object-fit:contain}
+.card .img .ph{width:84px;height:84px;color:#c3c9d6}
+.badge{position:absolute;top:10px;left:10px;background:var(--navy);color:var(--yellow);font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 8px;border-radius:6px}
+.card .body{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1}
+.tag{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--orange)}
+.card h3{margin:0;font-size:15px;font-weight:600;line-height:1.3}
+.card p{margin:0;font-size:13.5px;color:var(--muted)}
+.price{font-family:var(--display);font-stretch:85%;font-weight:800;font-size:20px;margin-top:auto}
+.price small{font-family:var(--body);font-weight:500;font-size:12px;color:var(--muted);display:block}
+.buy{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--orange);color:var(--orange-ink);text-decoration:none;font-weight:700;border-radius:10px;padding:11px 14px;font-size:14px}
+.buy:hover{filter:brightness(1.07)}
+.empty{border:2px dashed var(--line);border-radius:14px;padding:32px;text-align:center;color:var(--muted)}
+
+/* vídeos */
+.videos{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:14px}
+.vcard{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--yellow);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:10px;scroll-margin-top:80px}
+.vcard h3{margin:0;font-family:var(--display);font-stretch:85%;font-weight:800;font-size:19px;line-height:1.15}
+.vthumbs{display:flex;gap:8px;flex-wrap:wrap}
+.vthumbs a{width:58px;height:58px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:5px;display:grid;place-items:center}
+.vthumbs img{width:100%;height:100%;object-fit:contain}
+.vlinks{display:flex;gap:14px;flex-wrap:wrap;font-size:14px;font-weight:700}
+.vlinks a{color:var(--orange);text-decoration:none}
+.vlinks a:hover{text-decoration:underline}
+
+/* confiança */
+.trust{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.tcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;gap:14px}
+.tcard .ico{width:46px;height:46px;flex:none;border-radius:12px;background:var(--navy);color:var(--yellow);display:grid;place-items:center}
+.tcard .ico svg{width:26px;height:26px}
+.tcard>div:last-child{min-width:0}
+.tcard h3{margin:0 0 4px;font-size:16px}
+.tcard p{margin:0;font-size:14px;color:var(--muted)}
+.cnpj{font-family:var(--mono);font-size:13px;color:var(--ink);background:var(--chip);border-radius:6px;padding:1px 6px;white-space:nowrap}
+
+footer{background:var(--navy);color:#c5cde0;font-size:13.5px}
+footer .wrap{padding-block:32px;display:grid;grid-template-columns:1.3fr 1fr;gap:24px}
+footer b{color:#fff}
+footer .brand b{font-size:20px}
+footer .brand svg{width:42px;height:42px}
+footer p{margin:6px 0}
+footer .disc{border-left:3px solid var(--yellow);padding-left:12px}
+
+@media (max-width:860px){
+  .hero-in{grid-template-columns:1fr;padding-block:12px 52px}
+  .hero-card{display:none}
+  .trust{grid-template-columns:minmax(0,1fr)}
+  .cnpj{white-space:normal}
+  footer .wrap{grid-template-columns:1fr}
+  .nav nav{display:none}
+}
+@media (max-width:360px){
+  .searchbox{flex-wrap:wrap}
+  .searchbox input{flex-basis:100%}
+  .searchbox button{flex:1}
+  .grid{grid-template-columns:1fr!important}
+}
+@media (max-width:520px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .card .img{padding:10px}
+  .card .body{padding:10px}
+  .card h3{font-size:14px}
+  .card p{display:none}
+  .buy{padding:9px 8px;font-size:13px}
+  .toolbar .count{margin-left:0;width:100%}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
-<div id="app" data-p></div>
-<div id="toast" class="toast" data-p hidden></div>
-<script type="application/json" id="data" data-p>{"store": {"nome": "Achadinhos da Obra", "descricao": "As ferramentas e materiais que aparecem nos nossos vídeos, com link direto para comprar no Mercado Livre ou na Shopee.", "aviso": "Alguns links desta página são links de afiliado: se você comprar por eles, o canal pode receber uma comissão, sem custo extra para você.", "url": "https://achadinhosdaobra.github.io/"}, "videos": [{"id": "fita-isolante-ta-proibida-test", "titulo": "Fita Isolante Tá Proibida? Testei Conector Automático Wago!", "youtube": "", "produtos": [{"nome": "Conector de Emenda Wago 221-415 (kit com 10)", "porque": "Emenda segura em segundos, sem fita isolante.", "preco": "≈ R$ 64", "ml": "https://achadinhosdaobra.github.io/wago", "shopee": ""}, {"nome": "Alicate Desencapador de Fios Automático Tramontina", "porque": "Tira a capa do fio na medida certa, sem cortar o cobre.", "preco": "≈ R$ 88", "ml": "https://achadinhosdaobra.github.io/desencapador", "shopee": ""}, {"nome": "Termômetro Infravermelho Industrial com mira laser (até 400 °C)", "porque": "Detecta tomada e disjuntor esquentando sem encostar a mão.", "preco": "≈ R$ 35 a 70", "ml": "https://achadinhosdaobra.github.io/termometro", "shopee": ""}, {"nome": "Caneta Detectora de Tensão Exbom (sem contato, com lanterna)", "porque": "Avisa se o fio está energizado sem encostar nele.", "preco": "≈ R$ 26", "ml": "https://achadinhosdaobra.github.io/caneta", "shopee": ""}]}, {"id": "o-erro-com-furadeira-que-pode-", "titulo": "O Erro com Furadeira que Pode Custar Caro: Como Não Furar Canos e Fios", "youtube": "https://youtu.be/2D5of3faLsE", "produtos": [{"nome": "Multímetro Minipa ET-1507B (True RMS, CAT III)", "porque": "Mede certo em equipamentos modernos, com proteção CAT III.", "preco": "≈ R$ 160 a 230", "ml": "https://achadinhosdaobra.github.io/multimetro", "shopee": ""}, {"nome": "Termômetro Infravermelho Industrial com mira laser (até 400 °C)", "porque": "Detecta tomada e disjuntor esquentando sem encostar a mão.", "preco": "≈ R$ 35 a 70", "ml": "https://achadinhosdaobra.github.io/termometro", "shopee": ""}, {"nome": "Alicate Amperímetro AstroAI True RMS (CA e CC, 400A)", "porque": "True RMS de verdade e mede corrente CA e CC. Nota 4,9, loja oficial.", "preco": "≈ R$ 135 a 215", "ml": "https://achadinhosdaobra.github.io/alicate", "shopee": ""}]}, {"id": "wnt3wm", "titulo": "Disjuntor errado: o risco escondido no seu quadro", "youtube": "https://youtu.be/bbAfxU96uEc", "produtos": [{"nome": "Tomada Inteligente Wi-Fi com Medidor de Consumo (Bivolt)", "porque": "Mostra no celular quanto cada aparelho consome. Bivolt, nota 4,9, a mais vendida da categoria. Aguenta até 1.100 W em 127V ou 2.200 W em 220V: use em TV, geladeira, micro-ondas e computador, nunca em chuveiro, forno ou aquecedor.", "preco": "≈ R$ 40 a 60", "ml": "https://meli.la/1CgTAg5", "shopee": ""}, {"nome": "Termômetro Infravermelho Industrial com mira laser (até 400 °C)", "porque": "Detecta tomada e disjuntor esquentando sem encostar a mão. O mais vendido da categoria, nota 4,8. Serve também para cozinha e churrasco.", "preco": "≈ R$ 35 a 70", "ml": "https://meli.la/1fTDAeh", "shopee": ""}]}, {"id": "pfycof", "titulo": "Alicate True RMS ou comum? Não compre errado", "youtube": "https://youtu.be/faiEdsumYlw", "produtos": [{"nome": "Alicate Amperímetro AstroAI True RMS (CA e CC, 400A)", "porque": "True RMS de verdade e mede corrente CA e CC. Nota 4,9, mais de mil vendidos, loja oficial.", "preco": "≈ R$ 135 a 215", "ml": "https://meli.la/1e8ABj1", "shopee": ""}, {"nome": "Multímetro Minipa ET-1507B (True RMS, CAT III)", "porque": "Mede certo em equipamentos modernos", "preco": "≈ R$ 160 a 230", "ml": "https://meli.la/2ndx79t", "shopee": ""}]}], "catalogo": [{"nome": "Alicate Amperímetro AstroAI True RMS (CA e CC, 400A)", "porque": "True RMS de verdade e mede corrente CA e CC. Nota 4,9, loja oficial.", "preco": "≈ R$ 135 a 215", "categoria": "Ferramentas de medição", "ml": "https://achadinhosdaobra.github.io/alicate", "shopee": ""}, {"nome": "Multímetro Minipa ET-1507B (True RMS, CAT III)", "porque": "Mede certo em equipamentos modernos, com proteção CAT III.", "preco": "≈ R$ 160 a 230", "categoria": "Ferramentas de medição", "ml": "https://achadinhosdaobra.github.io/multimetro", "shopee": ""}, {"nome": "Termômetro Infravermelho Industrial com mira laser (até 400 °C)", "porque": "Detecta tomada e disjuntor esquentando sem encostar a mão.", "preco": "≈ R$ 35 a 70", "categoria": "Ferramentas de medição", "ml": "https://achadinhosdaobra.github.io/termometro", "shopee": ""}, {"nome": "Tomada Inteligente Wi-Fi com Medidor de Consumo (Bivolt)", "porque": "Mostra no celular quanto cada aparelho consome.", "preco": "≈ R$ 40 a 60", "categoria": "Iluminação e casa", "ml": "https://achadinhosdaobra.github.io/tomada", "shopee": ""}, {"nome": "Scanner de Parede: detecta fios, canos, metal e madeira", "porque": "Mostra onde passa fio e cano antes de furar a parede.", "preco": "≈ R$ 480", "categoria": "Ferramentas de medição", "ml": "https://achadinhosdaobra.github.io/scanner", "shopee": ""}, {"nome": "Caneta Detectora de Tensão Exbom (sem contato, com lanterna)", "porque": "Avisa se o fio está energizado sem encostar nele.", "preco": "≈ R$ 26", "categoria": "Ferramentas de medição", "ml": "https://achadinhosdaobra.github.io/caneta", "shopee": ""}, {"nome": "Testador de Tomada Habotest (padrão brasileiro)", "porque": "Mostra se a tomada tem terra e se a ligação está certa.", "preco": "≈ R$ 160", "categoria": "Ferramentas de medição", "ml": "https://achadinhosdaobra.github.io/testador", "shopee": ""}, {"nome": "Trena a Laser Digital 40 m (área e volume)", "porque": "Mede cômodos sozinho, em segundos, e calcula a área.", "preco": "≈ R$ 200", "categoria": "Ferramentas de medição", "ml": "https://achadinhosdaobra.github.io/trena-laser", "shopee": ""}, {"nome": "Nível a Laser Verde 12 Linhas com tripé", "porque": "Alinha prateleira, piso e azulejo sem errar.", "preco": "≈ R$ 330", "categoria": "Ferramentas de medição", "ml": "https://achadinhosdaobra.github.io/nivel-laser", "shopee": ""}, {"nome": "Parafusadeira e Furadeira de Impacto WAP K21 (bateria)", "porque": "Fura parede e aperta parafuso sem fio, com impacto.", "preco": "≈ R$ 260", "categoria": "Ferramentas elétricas", "ml": "https://achadinhosdaobra.github.io/furadeira", "shopee": ""}, {"nome": "Jogo de Brocas e Bits 195 peças com maleta", "porque": "Brocas para concreto, madeira e metal, mais bits e buchas.", "preco": "≈ R$ 57", "categoria": "Ferramentas elétricas", "ml": "https://achadinhosdaobra.github.io/brocas", "shopee": ""}, {"nome": "Jogo 12 Chaves Isoladas 1000 V (fenda e Phillips)", "porque": "Cabo isolado para mexer em tomada e disjuntor com mais segurança.", "preco": "≈ R$ 64", "categoria": "Ferramentas manuais", "ml": "https://achadinhosdaobra.github.io/chaves-isoladas", "shopee": ""}, {"nome": "Alicate Desencapador de Fios Automático Tramontina", "porque": "Tira a capa do fio na medida certa, sem cortar o cobre.", "preco": "≈ R$ 88", "categoria": "Ferramentas manuais", "ml": "https://achadinhosdaobra.github.io/desencapador", "shopee": ""}, {"nome": "Kit Alicate Crimpador + 1200 Terminais Ilhós", "porque": "Acabamento profissional nas pontas dos fios do quadro.", "preco": "≈ R$ 119", "categoria": "Ferramentas manuais", "ml": "https://achadinhosdaobra.github.io/crimpador", "shopee": ""}, {"nome": "Kit de Ferramentas 129 peças The Black Tools", "porque": "Soquetes, chaves e alicates numa maleta só, para casa e obra.", "preco": "≈ R$ 200", "categoria": "Ferramentas manuais", "ml": "https://achadinhosdaobra.github.io/maleta", "shopee": ""}, {"nome": "Conector de Emenda Wago 221-415 (kit com 10)", "porque": "Emenda segura em segundos, sem fita isolante.", "preco": "≈ R$ 64", "categoria": "Materiais elétricos", "ml": "https://achadinhosdaobra.github.io/wago", "shopee": ""}, {"nome": "Filtro de Linha iCLAMPER com protetor de surto (8 tomadas)", "porque": "Protege TV e computador de raio e pico de energia.", "preco": "≈ R$ 123", "categoria": "Materiais elétricos", "ml": "https://achadinhosdaobra.github.io/filtro-dps", "shopee": ""}, {"nome": "Lâmpada LED com Sensor de Presença Ourolux 9 W", "porque": "Acende sozinha quando alguém passa: garagem, corredor, escada.", "preco": "≈ R$ 22", "categoria": "Iluminação e casa", "ml": "https://achadinhosdaobra.github.io/lampada-sensor", "shopee": ""}, {"nome": "Lanterna de Cabeça Recarregável Hytalux LED", "porque": "Mãos livres para trabalhar no quadro com a luz desligada.", "preco": "≈ R$ 44", "categoria": "Iluminação e casa", "ml": "https://achadinhosdaobra.github.io/lanterna", "shopee": ""}, {"nome": "Luva Isolante de Eletricista Classe 00 (500 V)", "porque": "Proteção contra choque para quem trabalha com eletricidade.", "preco": "≈ R$ 206", "categoria": "Segurança (EPI)", "ml": "https://achadinhosdaobra.github.io/luva-isolante", "shopee": ""}]}</script>
-<script id="main" data-p>
-let D = JSON.parse(document.getElementById('data').textContent);
-let admin = false, editing = false, dirty = false, art = null, q = '', cat = 'Todas';
+</head>
+<body>
+<div class="trustbar"><div class="wrap">
+  <span>🔒 Compra segura pelo Mercado Livre</span>
+  <span>🚚 Entrega e garantia do Mercado Livre</span>
+  <span id="tb-cnpj"></span>
+</div></div>
 
-function h(tag, props, ...kids){
-  const el = document.createElement(tag);
-  for(const [k,v] of Object.entries(props||{})){
-    if(v==null || v===false) continue;
-    if(k==='class') el.className=v; else if(k==='text') el.textContent=v; else if(k==='style') el.style.cssText=v;
-    else if(k.startsWith('on')) el.addEventListener(k.slice(2), v); else el.setAttribute(k, v===true?'':v);
-  }
-  for(const c of kids.flat()){ if(c==null || c===false) continue; el.append(c instanceof Node ? c : document.createTextNode(String(c))); }
-  return el;
-}
-let tt; function toast(m){ const t=document.getElementById('toast'); t.textContent=m; t.hidden=false; clearTimeout(tt); tt=setTimeout(()=>t.hidden=true,4200); }
-async function copy(text){ try{ await navigator.clipboard.writeText(text); toast('Copiado.'); }catch(e){ toast('Não deu para copiar automaticamente: ' + text); } }
-const uid = () => Math.random().toString(36).slice(2,8);
-const safeUrl = u => { try{ const x = new URL(String(u||'').trim()); return /^https?:$/.test(x.protocol) ? x.href : null; }catch(e){ return null; } };
-function hue(s){ let n=0; for(const c of String(s)) n=(n*31+c.charCodeAt(0))%360; return n; }
-const hasLink = p => safeUrl(p.ml) || safeUrl(p.shopee);
-function mark(){ dirty = true; renderBar(); }
+<header class="hero">
+  <div class="wrap">
+    <div class="nav">
+      <a class="brand" href="#" aria-label="Achadinhos da Obra, início">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#ffc93c"/><circle cx="32" cy="32" r="24" fill="#0b1020"/><path d="M36 10 22 36h9l-4 18 15-26h-9z" fill="#ffc93c"/></svg>
+        <b>Achadinhos<span>da Obra</span></b>
+      </a>
+      <nav aria-label="Seções">
+        <a href="#produtos">Produtos</a>
+        <a href="#videos">Dos vídeos</a>
+        <a href="#confianca">Por que confiar</a>
+      </nav>
+    </div>
+    <div class="hero-in">
+      <div>
+        <div class="eyebrow">Ferramentas · Elétrica · Obra</div>
+        <h1>As ferramentas que a gente <em>testa e indica</em></h1>
+        <p class="lead">Selecionamos ferramentas e materiais elétricos com boa avaliação para quem faz reparos em casa e para profissionais. Você compra direto no Mercado Livre, com a segurança dele.</p>
+        <form class="searchbox" role="search" id="heroSearch">
+          <input type="search" id="q1" placeholder="Busque: alicate, disjuntor, trena…" aria-label="Buscar produto">
+          <button type="submit">Buscar</button>
+        </form>
+        <div class="stats" id="stats"></div>
+      </div>
+      <div class="hero-card" id="heroCard" aria-hidden="true"></div>
+    </div>
+  </div>
+</header>
 
-/* ---------- vitrine pública ---------- */
-function productCard(p){
-  const ml = safeUrl(p.ml), sh = safeUrl(p.shopee);
-  return h('article',{class:'card'},
-    h('div',{class:'hd'}, h('div',{class:'mono-tile', style:`background:hsl(${hue(p.nome)} 55% 42%)`, 'aria-hidden':'true', text:String(p.nome||'?').trim().charAt(0).toUpperCase()}), h('h3',{text:p.nome})),
-    p.porque ? h('p',{text:p.porque}) : null,
-    p.preco ? h('span',{class:'price', text:p.preco}) : null,
-    h('div',{class:'buy'},
-      ml ? h('a',{class:'btn primary', href:ml, target:'_blank', rel:'noopener sponsored', text:'Mercado Livre'}) : null,
-      sh ? h('a',{class:'btn', href:sh, target:'_blank', rel:'noopener sponsored', text:'Shopee'}) : null)
-  );
+<main class="wrap">
+  <section aria-labelledby="cat-h">
+    <div class="sec-h"><div><h2 id="cat-h">Categorias</h2><p>Escolha uma área para ver só os produtos dela.</p></div></div>
+    <div class="cats" id="cats"></div>
+  </section>
+
+  <section id="produtos" aria-labelledby="prod-h">
+    <div class="sec-h"><div><h2 id="prod-h">Produtos</h2><p>Preços aproximados. O valor final aparece no Mercado Livre.</p></div></div>
+    <div class="toolbar">
+      <input type="search" id="q" placeholder="Buscar produto…" aria-label="Buscar produto">
+      <select id="faixa" aria-label="Faixa de preço">
+        <option value="">Qualquer preço</option>
+        <option value="0-50">Até R$ 50</option>
+        <option value="50-150">R$ 50 a R$ 150</option>
+        <option value="150-300">R$ 150 a R$ 300</option>
+        <option value="300-99999">Acima de R$ 300</option>
+      </select>
+      <select id="ordem" aria-label="Ordenar">
+        <option value="">Mais indicados</option>
+        <option value="menor">Menor preço</option>
+        <option value="maior">Maior preço</option>
+        <option value="nome">Nome (A–Z)</option>
+      </select>
+      <label class="chk"><input type="checkbox" id="soVideo"> Só os dos vídeos</label>
+      <button class="btn-clear" id="limpar" type="button" hidden>Limpar filtros</button>
+      <span class="count" id="count" aria-live="polite"></span>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="vazio" hidden>Nenhum produto com esses filtros. <button class="btn-clear" type="button" onclick="limparFiltros()">Limpar filtros</button></div>
+  </section>
+
+  <section id="videos" aria-labelledby="vid-h">
+    <div class="sec-h"><div><h2 id="vid-h">Dos nossos vídeos</h2><p>Os produtos que aparecem em cada vídeo do canal.</p></div></div>
+    <div class="videos" id="vlist"></div>
+  </section>
+
+  <section id="confianca" aria-labelledby="tr-h">
+    <div class="sec-h"><div><h2 id="tr-h">Por que comprar com confiança</h2></div></div>
+    <div class="trust">
+      <div class="tcard"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 6v6c0 5 3.4 8.4 8 9 4.6-.6 8-4 8-9V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></div>
+        <div><h3>Compra 100% no Mercado Livre</h3><p>O pagamento, a entrega e a garantia são do Mercado Livre e do vendedor. Seus dados de pagamento nunca passam por este site.</p></div></div>
+      <div class="tcard"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 10h4M7 14h7"/><circle cx="17" cy="11" r="2"/></svg></div>
+        <div><h3>Empresa registrada</h3><p id="tr-empresa"></p></div></div>
+      <div class="tcard"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div>
+        <div><h3>Indicação de quem entende</h3><p>Escolhemos produtos com boa avaliação e explicamos o uso correto nos vídeos. Serviço elétrico deve ser feito por profissional habilitado.</p></div></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="brand" href="#" aria-label="Voltar ao início">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#ffc93c"/><circle cx="32" cy="32" r="24" fill="#0b1020"/><path d="M36 10 22 36h9l-4 18 15-26h-9z" fill="#ffc93c"/></svg>
+        <b>Achadinhos<span>da Obra</span></b>
+      </a>
+      <p class="disc" id="ft-aviso"></p>
+    </div>
+    <div id="ft-empresa"></div>
+  </div>
+</footer>
+
+<script type="application/json" id="data" data-p>{"store": {"nome": "Achadinhos da Obra", "descricao": "Ferramentas e materiais elétricos indicados nos nossos vídeos, com compra pelo Mercado Livre.", "aviso": "Alguns links desta página são links de afiliado: se você comprar por eles, o canal pode receber uma comissão, sem custo extra para você. Preços aproximados; o valor final aparece no Mercado Livre.", "url": "https://achadinhosdaobra.github.io/", "empresa": {"razao": "69.736.394 GREICE RODRIGUES NASCIMENTO", "cnpj": "69.736.394/0001-47", "cidade": "Criciúma/SC", "email": "gssolucoesengenharia@gmail.com"}}, "videos": [{"id": "parafusadeira-barata-aguenta-o", "titulo": "Parafusadeira Barata Aguenta Obra Pesada? Testei Até Quebrar!", "youtube": "", "produtos": [{"nome": "Parafusadeira e Furadeira de Impacto WAP K21 (bateria)", "porque": "Fura parede e aperta parafuso sem fio, com impacto.", "preco": "≈ R$ 260", "ml": "https://achadinhosdaobra.github.io/furadeira", "shopee": ""}, {"nome": "Jogo de Brocas e Bits 195 peças com maleta", "porque": "Brocas para concreto, madeira e metal, mais bits e buchas.", "preco": "≈ R$ 57", "ml": "https://achadinhosdaobra.github.io/brocas", "shopee": ""}, {"nome": "Luva Isolante de Eletricista Classe 00 (500 V)", "porque": "Proteção contra choque para quem trabalha com eletricidade.", "preco": "≈ R$ 206", "ml": "https://achadinhosdaobra.github.io/luva-isolante", "shopee": ""}, {"nome": "Caneta Detectora de Tensão Exbom (sem contato, com lanterna)", "porque": "Avisa se o fio está energizado sem encostar nele.", "preco": "≈ R$ 26", "ml": "https://achadinhosdaobra.github.io/caneta", "shopee": ""}]}, {"id": "fita-isolante-ta-proibida-test", "titulo": "Fita Isolante Tá Proibida? Testei Conector Automático Wago!", "youtube": "", "produtos": [{"nome": "Conector de Emenda Wago 221-415 (kit com 10)", "porque": "Emenda segura em segundos, sem fita isolante.", "preco": "≈ R$ 64", "ml": "https://achadinhosdaobra.github.io/wago", "shopee": ""}, {"nome": "Alicate Desencapador de Fios Automático Tramontina", "porque": "Tira a capa do fio na medida certa, sem cortar o cobre.", "preco": "≈ R$ 88", "ml": "https://achadinhosdaobra.github.io/desencapador", "shopee": ""}, {"nome": "Termômetro Infravermelho Industrial com mira laser (até 400 °C)", "porque": "Detecta tomada e disjuntor esquentando sem encostar a mão.", "preco": "≈ R$ 35 a 70", "ml": "https://achadinhosdaobra.github.io/termometro", "shopee": ""}, {"nome": "Caneta Detectora de Tensão Exbom (sem contato, com lanterna)", "porque": "Avisa se o fio está energizado sem encostar nele.", "preco": "≈ R$ 26", "ml": "https://achadinhosdaobra.github.io/caneta", "shopee": ""}]}, {"id": "o-erro-com-furadeira-que-pode-", "titulo": "O Erro com Furadeira que Pode Custar Caro: Como Não Furar Canos e Fios", "youtube": "https://youtu.be/2D5of3faLsE", "produtos": [{"nome": "Multímetro Minipa ET-1507B (True RMS, CAT III)", "porque": "Mede certo em equipamentos modernos, com proteção CAT III.", "preco": "≈ R$ 160 a 230", "ml": "https://achadinhosdaobra.github.io/multimetro", "shopee": ""}, {"nome": "Termômetro Infravermelho Industrial com mira laser (até 400 °C)", "porque": "Detecta tomada e disjuntor esquentando sem encostar a mão.", "preco": "≈ R$ 35 a 70", "ml": "https://achadinhosdaobra.github.io/termometro", "shopee": ""}, {"nome": "Alicate Amperímetro AstroAI True RMS (CA e CC, 400A)", "porque": "True RMS de verdade e mede corrente CA e CC. Nota 4,9, loja oficial.", "preco": "≈ R$ 135 a 215", "ml": "https://achadinhosdaobra.github.io/alicate", "shopee": ""}]}, {"id": "wnt3wm", "titulo": "Disjuntor errado: o risco escondido no seu quadro", "youtube": "https://youtu.be/bbAfxU96uEc", "produtos": [{"nome": "Tomada Inteligente Wi-Fi com Medidor de Consumo (Bivolt)", "porque": "Mostra no celular quanto cada aparelho consome. Bivolt, nota 4,9, a mais vendida da categoria. Aguenta até 1.100 W em 127V ou 2.200 W em 220V: use em TV, geladeira, micro-ondas e computador, nunca em chuveiro, forno ou aquecedor.", "preco": "≈ R$ 40 a 60", "ml": "https://meli.la/1CgTAg5", "shopee": ""}, {"nome": "Termômetro Infravermelho Industrial com mira laser (até 400 °C)", "porque": "Detecta tomada e disjuntor esquentando sem encostar a mão. O mais vendido da categoria, nota 4,8. Serve também para cozinha e churrasco.", "preco": "≈ R$ 35 a 70", "ml": "https://meli.la/1fTDAeh", "shopee": ""}]}, {"id": "pfycof", "titulo": "Alicate True RMS ou comum? Não compre errado", "youtube": "https://youtu.be/faiEdsumYlw", "produtos": [{"nome": "Alicate Amperímetro AstroAI True RMS (CA e CC, 400A)", "porque": "True RMS de verdade e mede corrente CA e CC. Nota 4,9, mais de mil vendidos, loja oficial.", "preco": "≈ R$ 135 a 215", "ml": "https://meli.la/1e8ABj1", "shopee": ""}, {"nome": "Multímetro Minipa ET-1507B (True RMS, CAT III)", "porque": "Mede certo em equipamentos modernos", "preco": "≈ R$ 160 a 230", "ml": "https://meli.la/2ndx79t", "shopee": ""}]}], "catalogo": [{"id": "alicate", "nome": "Alicate Amperímetro AstroAI True RMS (CA e CC, 400A)", "porque": "True RMS de verdade e mede corrente CA e CC. Nota 4,9, loja oficial.", "preco": "≈ R$ 135 a 215", "categoria": "Ferramentas de medição", "imagem": "", "ml": "https://achadinhosdaobra.github.io/alicate", "shopee": ""}, {"id": "multimetro", "nome": "Multímetro Minipa ET-1507B (True RMS, CAT III)", "porque": "Mede certo em equipamentos modernos, com proteção CAT III.", "preco": "≈ R$ 160 a 230", "categoria": "Ferramentas de medição", "imagem": "https://http2.mlstatic.com/D_NQ_NP_760386-MLA99504373026_112025-O.webp", "ml": "https://achadinhosdaobra.github.io/multimetro", "shopee": ""}, {"id": "termometro", "nome": "Termômetro Infravermelho Industrial com mira laser (até 400 °C)", "porque": "Detecta tomada e disjuntor esquentando sem encostar a mão.", "preco": "≈ R$ 35 a 70", "categoria": "Ferramentas de medição", "imagem": "https://http2.mlstatic.com/D_NQ_NP_733410-MLA109313488530_042026-O.webp", "ml": "https://achadinhosdaobra.github.io/termometro", "shopee": ""}, {"id": "tomada", "nome": "Tomada Inteligente Wi-Fi com Medidor de Consumo (Bivolt)", "porque": "Mostra no celular quanto cada aparelho consome.", "preco": "≈ R$ 40 a 60", "categoria": "Iluminação e casa", "imagem": "https://http2.mlstatic.com/D_NQ_NP_812498-MLA99509383470_112025-O.webp", "ml": "https://achadinhosdaobra.github.io/tomada", "shopee": ""}, {"id": "scanner", "nome": "Scanner de Parede: detecta fios, canos, metal e madeira", "porque": "Mostra onde passa fio e cano antes de furar a parede.", "preco": "≈ R$ 480", "categoria": "Ferramentas de medição", "imagem": "https://http2.mlstatic.com/D_NQ_NP_657507-MLB113051069455_062026-O.webp", "ml": "https://achadinhosdaobra.github.io/scanner", "shopee": ""}, {"id": "caneta", "nome": "Caneta Detectora de Tensão Exbom (sem contato, com lanterna)", "porque": "Avisa se o fio está energizado sem encostar nele.", "preco": "≈ R$ 26", "categoria": "Ferramentas de medição", "imagem": "https://http2.mlstatic.com/D_NQ_NP_790600-MLA99634239502_122025-O.webp", "ml": "https://achadinhosdaobra.github.io/caneta", "shopee": ""}, {"id": "testador", "nome": "Testador de Tomada Habotest (padrão brasileiro)", "porque": "Mostra se a tomada tem terra e se a ligação está certa.", "preco": "≈ R$ 160", "categoria": "Ferramentas de medição", "imagem": "https://http2.mlstatic.com/D_NQ_NP_713900-MLA99466494528_112025-O.webp", "ml": "https://achadinhosdaobra.github.io/testador", "shopee": ""}, {"id": "trena-laser", "nome": "Trena a Laser Digital 40 m (área e volume)", "porque": "Mede cômodos sozinho, em segundos, e calcula a área.", "preco": "≈ R$ 200", "categoria": "Ferramentas de medição", "imagem": "https://http2.mlstatic.com/D_NQ_NP_902029-MLA115080685203_072026-O.webp", "ml": "https://achadinhosdaobra.github.io/trena-laser", "shopee": ""}, {"id": "nivel-laser", "nome": "Nível a Laser Verde 12 Linhas com tripé", "porque": "Alinha prateleira, piso e azulejo sem errar.", "preco": "≈ R$ 330", "categoria": "Ferramentas de medição", "imagem": "https://http2.mlstatic.com/D_NQ_NP_609947-MLA100070739765_122025-O.webp", "ml": "https://achadinhosdaobra.github.io/nivel-laser", "shopee": ""}, {"id": "furadeira", "nome": "Parafusadeira e Furadeira de Impacto WAP K21 (bateria)", "porque": "Fura parede e aperta parafuso sem fio, com impacto.", "preco": "≈ R$ 260", "categoria": "Ferramentas elétricas", "imagem": "https://http2.mlstatic.com/D_NQ_NP_621555-MLA114663974288_082026-O.webp", "ml": "https://achadinhosdaobra.github.io/furadeira", "shopee": ""}, {"id": "brocas", "nome": "Jogo de Brocas e Bits 195 peças com maleta", "porque": "Brocas para concreto, madeira e metal, mais bits e buchas.", "preco": "≈ R$ 57", "categoria": "Ferramentas elétricas", "imagem": "https://http2.mlstatic.com/D_NQ_NP_823124-MLA108105406954_032026-O.webp", "ml": "https://achadinhosdaobra.github.io/brocas", "shopee": ""}, {"id": "chaves-isoladas", "nome": "Jogo 12 Chaves Isoladas 1000 V (fenda e Phillips)", "porque": "Cabo isolado para mexer em tomada e disjuntor com mais segurança.", "preco": "≈ R$ 64", "categoria": "Ferramentas manuais", "imagem": "https://http2.mlstatic.com/D_NQ_NP_915885-MLA115049836250_082026-O.webp", "ml": "https://achadinhosdaobra.github.io/chaves-isoladas", "shopee": ""}, {"id": "desencapador", "nome": "Alicate Desencapador de Fios Automático Tramontina", "porque": "Tira a capa do fio na medida certa, sem cortar o cobre.", "preco": "≈ R$ 88", "categoria": "Ferramentas manuais", "imagem": "https://http2.mlstatic.com/D_NQ_NP_970935-MLA95961059169_102025-O.webp", "ml": "https://achadinhosdaobra.github.io/desencapador", "shopee": ""}, {"id": "crimpador", "nome": "Kit Alicate Crimpador + 1200 Terminais Ilhós", "porque": "Acabamento profissional nas pontas dos fios do quadro.", "preco": "≈ R$ 119", "categoria": "Ferramentas manuais", "imagem": "https://http2.mlstatic.com/D_NQ_NP_909617-MLA109112766975_032026-O.webp", "ml": "https://achadinhosdaobra.github.io/crimpador", "shopee": ""}, {"id": "maleta", "nome": "Kit de Ferramentas 129 peças The Black Tools", "porque": "Soquetes, chaves e alicates numa maleta só, para casa e obra.", "preco": "≈ R$ 200", "categoria": "Ferramentas manuais", "imagem": "https://http2.mlstatic.com/D_NQ_NP_664367-MLA115530496545_082026-O.webp", "ml": "https://achadinhosdaobra.github.io/maleta", "shopee": ""}, {"id": "wago", "nome": "Conector de Emenda Wago 221-415 (kit com 10)", "porque": "Emenda segura em segundos, sem fita isolante.", "preco": "≈ R$ 64", "categoria": "Materiais elétricos", "imagem": "https://http2.mlstatic.com/D_NQ_NP_867541-MLA99954526315_112025-O.webp", "ml": "https://achadinhosdaobra.github.io/wago", "shopee": ""}, {"id": "filtro-dps", "nome": "Filtro de Linha iCLAMPER com protetor de surto (8 tomadas)", "porque": "Protege TV e computador de raio e pico de energia.", "preco": "≈ R$ 123", "categoria": "Materiais elétricos", "imagem": "https://http2.mlstatic.com/D_NQ_NP_896263-MLA96145842619_102025-O.webp", "ml": "https://achadinhosdaobra.github.io/filtro-dps", "shopee": ""}, {"id": "lampada-sensor", "nome": "Lâmpada LED com Sensor de Presença Ourolux 9 W", "porque": "Acende sozinha quando alguém passa: garagem, corredor, escada.", "preco": "≈ R$ 22", "categoria": "Iluminação e casa", "imagem": "https://http2.mlstatic.com/D_NQ_NP_732362-MLA99598315698_122025-O.webp", "ml": "https://achadinhosdaobra.github.io/lampada-sensor", "shopee": ""}, {"id": "lanterna", "nome": "Lanterna de Cabeça Recarregável Hytalux LED", "porque": "Mãos livres para trabalhar no quadro com a luz desligada.", "preco": "≈ R$ 44", "categoria": "Iluminação e casa", "imagem": "https://http2.mlstatic.com/D_NQ_NP_979254-MLA96763133154_112025-O.webp", "ml": "https://achadinhosdaobra.github.io/lanterna", "shopee": ""}, {"id": "luva-isolante", "nome": "Luva Isolante de Eletricista Classe 00 (500 V)", "porque": "Proteção contra choque para quem trabalha com eletricidade.", "preco": "≈ R$ 206", "categoria": "Segurança (EPI)", "imagem": "https://http2.mlstatic.com/D_NQ_NP_693187-MLA111245743494_052026-O.webp", "ml": "https://achadinhosdaobra.github.io/luva-isolante", "shopee": ""}]}</script>
+<script>
+const D = JSON.parse(document.getElementById("data").textContent);
+const S = D.store || {}, E = S.empresa || {};
+const PRODS = (D.catalogo || []).map((p, i) => ({...p, ordem: i, min: precoMin(p.preco)}));
+/* vídeos antigos guardam o link do Mercado Livre; os novos, o link curto: casa pelos dois e pelo nome */
+const ACHAR = {};
+PRODS.forEach(p => { ACHAR[p.ml] = ACHAR[p.nome] = p; });
+const achar = vp => ACHAR[vp.ml] || ACHAR[vp.nome];
+const NOS_VIDEOS = new Set((D.videos || []).flatMap(v => (v.produtos || []).map(vp => (achar(vp) || vp).ml)));
+
+const ICONES = {
+  "Ferramentas de medição": '<path d="M4 20h16M6 16l4-8 4 5 3-6 3 9"/>',
+  "Ferramentas elétricas": '<path d="M3 10h11l3-3h3v8h-3l-3-3H3z"/><path d="M8 14v5"/>',
+  "Ferramentas manuais": '<path d="M14 6a4 4 0 0 0 5 5l-9 9a2 2 0 0 1-3-3z"/>',
+  "Materiais elétricos": '<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',
+  "Iluminação e casa": '<path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/>',
+  "Segurança (EPI)": '<path d="M12 3 4 6v6c0 5 3.4 8.4 8 9 4.6-.6 8-4 8-9V6z"/>',
+  "_": '<rect x="4" y="4" width="16" height="16" rx="3"/>'
+};
+const ico = c => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICONES[c] || ICONES._}</svg>`;
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function precoMin(t){ const m = String(t || "").replace(/\./g, "").match(/\d+(,\d+)?/); return m ? parseFloat(m[0].replace(",", ".")) : null; }
+const fmt = n => n == null ? "" : "R$ " + n.toLocaleString("pt-BR", {minimumFractionDigits: 0});
+const norm = s => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+
+let estado = {cat: "", q: "", faixa: "", ordem: "", soVideo: false};
+
+/* empresa e confiança */
+if (E.cnpj){
+  document.getElementById("tb-cnpj").textContent = "✅ Empresa registrada · CNPJ " + E.cnpj;
+  document.getElementById("tr-empresa").innerHTML = `Site mantido por <b>${esc(E.razao)}</b>, <span class="cnpj">CNPJ ${esc(E.cnpj)}</span>, ${esc(E.cidade)}. Você pode consultar o CNPJ no site da Receita Federal.`;
+  document.getElementById("ft-empresa").innerHTML = `<p><b>${esc(E.razao)}</b></p><p>CNPJ ${esc(E.cnpj)}</p><p>${esc(E.cidade)}</p>${E.email ? `<p>Contato: <a href="mailto:${esc(E.email)}">${esc(E.email)}</a></p>` : ""}<p>Os produtos são vendidos e entregues por vendedores do Mercado Livre.</p>`;
 }
-function publicView(){
-  const term = q.trim().toLowerCase();
-  const vids = D.videos.map(v=>({v, prods:(v.produtos||[]).filter(p=>hasLink(p) && (!term || (v.titulo+' '+p.nome+' '+(p.porque||'')).toLowerCase().includes(term)))})).filter(x=>x.prods.length);
-  const search = h('input',{id:'busca', type:'search', placeholder:'Buscar ferramenta, categoria ou vídeo', 'aria-label':'Buscar ferramenta, categoria ou vídeo', oninput:e=>{ q=e.target.value; const r=document.getElementById('results'); r.replaceChildren(...results()); }});
-  search.value = q;
-  function results(){
-    const list = D.videos.map(v=>({v, prods:(v.produtos||[]).filter(p=>hasLink(p) && (!q.trim() || (v.titulo+' '+p.nome+' '+(p.porque||'')).toLowerCase().includes(q.trim().toLowerCase())))})).filter(x=>x.prods.length);
-    const t = q.trim().toLowerCase();
-    const todos = (D.catalogo||[]).filter(p=>hasLink(p) && (cat==='Todas' || p.categoria===cat) && (!t || (p.nome+' '+(p.porque||'')+' '+(p.categoria||'')).toLowerCase().includes(t)));
-    const cats = ['Todas', ...new Set((D.catalogo||[]).filter(hasLink).map(p=>p.categoria||'Outros'))];
-    const catalogo = (D.catalogo||[]).length ? [h('section',{class:'cat', id:'todos'},
-      h('div',{class:'vh'}, h('div',{}, h('span',{class:'num', text:'CATÁLOGO COMPLETO'}), h('h2',{text:'Todos os achadinhos'}))),
-      h('div',{class:'chips', role:'group', 'aria-label':'Filtrar por categoria'}, cats.map(c=>h('button',{class:'chip', 'aria-pressed':String(c===cat), onclick:()=>{ cat=c; document.getElementById('results').replaceChildren(...results()); }, text:c}))),
-      todos.length ? h('div',{class:'grid'}, todos.map(productCard)) : h('div',{class:'empty', text:'Nada encontrado com essa busca.'}))] : [];
-    if(!list.length) return [...catalogo, catalogo.length ? null : h('div',{class:'empty', text: D.videos.some(v=>(v.produtos||[]).some(hasLink)) ? 'Nada encontrado com essa busca.' : 'Em breve: as ferramentas dos nossos vídeos aparecem aqui.'})].filter(Boolean);
-    return [...catalogo, ...list.map(({v,prods})=>h('section',{class:'video', id:'v-'+v.id},
-      h('div',{class:'vh'}, h('div',{}, h('span',{class:'num', text:'FERRAMENTAS DO VÍDEO'}), h('h2',{text:v.titulo})),
-        safeUrl(v.youtube) ? h('a',{class:'link', href:safeUrl(v.youtube), target:'_blank', rel:'noopener', text:'Assistir no YouTube ↗'}) : null),
-      h('div',{class:'grid'}, prods.map(productCard))))];
-  }
-  return [
-    h('header',{class:'top'}, h('span',{class:'eyebrow', text:'Vitrine'}), h('h1',{text:D.store.nome}), h('p',{class:'lead', text:D.store.descricao}), h('div',{class:'disc', text:D.store.aviso})),
-    vids.length || D.videos.length ? h('div',{class:'search'}, search) : null,
-    h('div',{id:'results', style:'display:flex;flex-direction:column;gap:36px'}, results()),
-    h('footer',{text:'Preços e disponibilidade são definidos pelas lojas e podem mudar.'})
-  ];
+document.getElementById("ft-aviso").textContent = S.aviso || "";
+
+/* números do topo */
+const cats = [...new Set(PRODS.map(p => p.categoria || "Outros"))];
+document.getElementById("stats").innerHTML = `<span class="stat"><b>${PRODS.length}</b> produtos selecionados</span><span class="stat"><b>${cats.length}</b> categorias</span><span class="stat">Compra pelo <b>Mercado Livre</b></span>`;
+document.getElementById("heroCard").innerHTML = PRODS.filter(p => p.imagem).slice(0, 4).map(p => `<div class="mini"><img src="${esc(p.imagem)}" alt="" loading="lazy" referrerpolicy="no-referrer"></div>`).join("");
+
+/* categorias */
+function desenharCats(){
+  const contar = c => PRODS.filter(p => !c || (p.categoria || "Outros") === c).length;
+  document.getElementById("cats").innerHTML = [["", "Todos"], ...cats.map(c => [c, c])].map(([c, n]) =>
+    `<button class="cat" type="button" data-cat="${esc(c)}" aria-pressed="${estado.cat === c}"><span class="ico">${ico(c || "_")}</span><b>${esc(n)}</b><small>${contar(c)} produto(s)</small></button>`).join("");
+  document.querySelectorAll(".cat").forEach(b => b.onclick = () => { estado.cat = b.dataset.cat; desenhar(); document.getElementById("produtos").scrollIntoView(); });
 }
 
-/* ---------- edição (só o dono vê) ---------- */
-function field(obj, key, label, opts={}){
-  const el = opts.area ? h('textarea',{rows:opts.rows||'3'}) : h('input',{type:'text', placeholder:opts.ph||''});
-  el.id = 'f-'+uid(); el.value = obj[key] || '';
-  el.addEventListener('input', ()=>{ obj[key] = el.value; mark(); });
-  return h('label',{class:'f'+(opts.full?' full':''), for:el.id}, label, el);
+/* produtos */
+function filtrar(){
+  const q = norm(estado.q).trim().split(/\s+/).filter(Boolean);
+  const [a, b] = estado.faixa ? estado.faixa.split("-").map(Number) : [null, null];
+  let l = PRODS.filter(p =>
+    (!estado.cat || (p.categoria || "Outros") === estado.cat) &&
+    (!q.length || q.every(t => norm(p.nome + " " + p.porque + " " + p.categoria).includes(t))) &&
+    (a == null || (p.min != null && p.min >= a && p.min <= b)) &&
+    (!estado.soVideo || NOS_VIDEOS.has(p.ml)));
+  if (estado.ordem === "menor") l.sort((x, y) => (x.min ?? 1e9) - (y.min ?? 1e9));
+  else if (estado.ordem === "maior") l.sort((x, y) => (y.min ?? -1) - (x.min ?? -1));
+  else if (estado.ordem === "nome") l.sort((x, y) => x.nome.localeCompare(y.nome, "pt-BR"));
+  return l;
 }
-function importar(text){
-  let j; try{ j = JSON.parse(text); }catch(e){ return toast('Não reconheci o conteúdo. Cole o texto copiado na Fábrica (botão "Copiar para a vitrine").'); }
-  if(!j || !j.titulo || !Array.isArray(j.produtos)) return toast('O conteúdo colado não tem título e produtos.');
-  D.videos.unshift({id:uid(), titulo:String(j.titulo), youtube:'', produtos:j.produtos.map(p=>({nome:String(p.nome||''), porque:String(p.porque||''), preco:String(p.faixa_preco||p.preco||''), busca:String(p.busca||''), ml:'', shopee:''}))});
-  mark(); render(); toast('Vídeo importado. Agora cole seus links de afiliado em cada produto.');
+function card(p){
+  const img = p.imagem ? `<img src="${esc(p.imagem)}" alt="${esc(p.nome)}" loading="lazy" referrerpolicy="no-referrer">` : `<span class="ph">${ico(p.categoria)}</span>`;
+  return `<article class="card">
+    <a class="img" href="${esc(p.ml)}" target="_blank" rel="noopener sponsored" aria-label="Ver ${esc(p.nome)} no Mercado Livre">${img}${NOS_VIDEOS.has(p.ml) ? '<span class="badge">▶ No vídeo</span>' : ""}</a>
+    <div class="body">
+      <span class="tag">${esc(p.categoria || "Outros")}</span>
+      <h3>${esc(p.nome)}</h3>
+      <p>${esc(p.porque)}</p>
+      <div class="price">${p.min != null ? "a partir de " + fmt(p.min) : esc(p.preco)}<small>preço aproximado</small></div>
+      <a class="buy" href="${esc(p.ml)}" target="_blank" rel="noopener sponsored">Ver no Mercado Livre</a>
+    </div></article>`;
 }
-function searchLinks(p){
-  const t = String(p.busca || p.nome || '').trim(); if(!t) return null;
-  return h('span',{style:'font-size:12px;color:var(--muted)'}, 'Achar o produto: ',
-    h('a',{class:'link', href:'https://lista.mercadolivre.com.br/'+encodeURIComponent(t.replace(/\s+/g,'-')), target:'_blank', rel:'noopener', text:'Mercado Livre'}), ' · ',
-    h('a',{class:'link', href:'https://shopee.com.br/search?keyword='+encodeURIComponent(t), target:'_blank', rel:'noopener', text:'Shopee'}));
+function desenhar(){
+  desenharCats();
+  const l = filtrar();
+  document.getElementById("grid").innerHTML = l.map(card).join("");
+  document.getElementById("vazio").hidden = l.length > 0;
+  document.getElementById("count").textContent = `${l.length} de ${PRODS.length} produtos`;
+  document.getElementById("limpar").hidden = !(estado.cat || estado.q || estado.faixa || estado.ordem || estado.soVideo);
 }
-function editView(){
-  const paste = h('textarea',{id:'imp', rows:'4', placeholder:'Cole aqui o texto copiado na Fábrica (botão "Copiar para a vitrine")'});
-  return [
-    h('header',{class:'top'}, h('span',{class:'eyebrow', text:'Editando a vitrine'}), h('h1',{text:D.store.nome})),
-    h('div',{class:'ed'}, h('h3',{text:'Dados da vitrine'}),
-      h('div',{class:'fields'}, field(D.store,'nome','Nome da vitrine'), field(D.store,'url','Link público desta vitrine', {ph:'Cole o link público gerado no botão Compartilhar'}),
-        field(D.store,'descricao','Descrição', {area:true, full:true, rows:'2'}), field(D.store,'aviso','Aviso de afiliado (obrigatório pelo CONAR)', {area:true, full:true, rows:'2'}))),
-    h('div',{class:'ed'}, h('h3',{text:'Adicionar vídeo'}), paste,
-      h('div',{style:'display:flex;gap:8px;flex-wrap:wrap'}, h('button',{class:'btn primary sm', onclick:()=>importar(paste.value), text:'Importar da Fábrica'}),
-        h('button',{class:'btn sm', onclick:()=>{ D.videos.unshift({id:uid(), titulo:'Novo vídeo', youtube:'', produtos:[]}); mark(); render(); }, text:'Adicionar vídeo em branco'}))),
-    D.videos.length ? null : h('div',{class:'empty', text:'Nenhum vídeo ainda. Importe o primeiro pela Fábrica.'}),
-    ...D.videos.map((v,vi)=>{
-      const pend = (v.produtos||[]).filter(p=>!hasLink(p)).length;
-      return h('div',{class:'ed'},
-        h('div',{class:'prod row', style:'border:0;padding:0;flex-direction:row'}, h('h3',{text:v.titulo || 'Sem título'}),
-          h('div',{style:'display:flex;gap:6px;flex-wrap:wrap'},
-            D.store.url ? h('button',{class:'btn sm', onclick:()=>copy(D.store.url.split('#')[0]+'#v-'+v.id), text:'Copiar link deste vídeo'}) : null,
-            h('button',{class:'btn sm danger', onclick:e=>{ const b=e.currentTarget; if(b.dataset.c){ D.videos.splice(vi,1); mark(); render(); } else { b.dataset.c='1'; b.textContent='Clique de novo para excluir'; } }, text:'Excluir vídeo'}))),
-        h('div',{class:'fields'}, field(v,'titulo','Título do vídeo'), field(v,'youtube','Link do vídeo no YouTube', {ph:'https://youtu.be/...'})),
-        h('span',{class: pend ? 'pend' : 'okk', text: pend ? `${pend} produto(s) sem link — não aparecem para o público` : 'Todos os produtos com link'}),
-        ...(v.produtos||[]).map((p,pi)=>h('div',{class:'prod'},
-          h('div',{class:'row'}, h('strong',{text:`${pi+1}. ${p.nome || 'Produto'}`}),
-            h('div',{style:'display:flex;gap:6px'},
-              h('button',{class:'btn sm', 'aria-label':'Subir produto', title:'Subir', disabled: pi===0, onclick:()=>{ const a=v.produtos; [a[pi-1],a[pi]]=[a[pi],a[pi-1]]; mark(); render(); }, text:'↑'}),
-              h('button',{class:'btn sm', 'aria-label':'Descer produto', title:'Descer', disabled: pi===v.produtos.length-1, onclick:()=>{ const a=v.produtos; [a[pi+1],a[pi]]=[a[pi],a[pi+1]]; mark(); render(); }, text:'↓'}),
-              h('button',{class:'btn sm danger', onclick:()=>{ v.produtos.splice(pi,1); mark(); render(); }, text:'Remover'}))),
-          h('div',{class:'fields'}, field(p,'nome','Nome'), field(p,'preco','Faixa de preço', {ph:'≈ R$ 80 a 150'}), field(p,'porque','Por que aparece no vídeo', {full:true}),
-            field(p,'ml','Seu link de afiliado — Mercado Livre', {ph:'https://meli.la/...'}), field(p,'shopee','Seu link de afiliado — Shopee', {ph:'https://s.shopee.com.br/...'})),
-          searchLinks(p))),
-        h('button',{class:'btn sm', style:'align-self:flex-start', onclick:()=>{ (v.produtos=v.produtos||[]).push({nome:'', porque:'', preco:'', ml:'', shopee:''}); mark(); render(); }, text:'+ Produto'}));
-    })
-  ];
+function limparFiltros(){
+  estado = {cat: "", q: "", faixa: "", ordem: "", soVideo: false};
+  ["q", "q1"].forEach(i => document.getElementById(i).value = "");
+  document.getElementById("faixa").value = document.getElementById("ordem").value = "";
+  document.getElementById("soVideo").checked = false;
+  desenhar();
 }
+document.getElementById("q").oninput = e => { estado.q = e.target.value; desenhar(); };
+document.getElementById("faixa").onchange = e => { estado.faixa = e.target.value; desenhar(); };
+document.getElementById("ordem").onchange = e => { estado.ordem = e.target.value; desenhar(); };
+document.getElementById("soVideo").onchange = e => { estado.soVideo = e.target.checked; desenhar(); };
+document.getElementById("limpar").onclick = limparFiltros;
+document.getElementById("heroSearch").onsubmit = e => {
+  e.preventDefault(); estado.q = document.getElementById("q1").value; document.getElementById("q").value = estado.q;
+  desenhar(); document.getElementById("produtos").scrollIntoView();
+};
 
-/* ---------- salvar ---------- */
-function buildDoc(){
-  const reset = document.head.querySelector('style')?.textContent || '';
-  const parts = [...document.body.children].filter(e=>e.hasAttribute('data-p')).map(e=>{
-    if(e.id==='data') return '<script type="application/json" id="data" data-p>' + JSON.stringify(D).replace(/</g,'\\u003c') + '<\/script>';
-    if(e.id==='app') return '<div id="app" data-p></div>';
-    if(e.id==='toast') return '<div id="toast" class="toast" data-p hidden></div>';
-    return e.outerHTML;
-  });
-  return '<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>' + reset + '</style></head><body>' + parts.join('') + '</body></html>';
-}
-let saving = false;
-async function publicar(){
-  if(!art || saving) return;
-  saving = true; renderBar();
-  try{ await art.publish(buildDoc()); dirty = false; toast('Vitrine publicada.'); }
-  catch(e){
-    const m = {conflict:'Outra versão foi salva ao mesmo tempo. A página vai recarregar; refaça a última alteração.', not_writer:'Você não tem permissão para publicar esta vitrine.', not_granted:'Você não tem permissão para publicar esta vitrine.', rate_limited:'Muitas publicações seguidas. Espere um minuto.'}[e?.code];
-    toast(m || 'Não foi possível publicar. Tente de novo.');
-  }
-  saving = false; renderBar();
-}
+/* vídeos */
+document.getElementById("vlist").innerHTML = (D.videos || []).map(v => `<article class="vcard" id="v-${esc(v.id)}">
+  <h3>${esc(v.titulo)}</h3>
+  <div class="vthumbs">${(v.produtos || []).map(vp => { const c = achar(vp) || vp; return `<a href="${esc(c.ml)}" target="_blank" rel="noopener sponsored" title="${esc(c.nome)}">${c.imagem ? `<img src="${esc(c.imagem)}" alt="${esc(c.nome)}" loading="lazy" referrerpolicy="no-referrer">` : ico(c.categoria)}</a>`; }).join("")}</div>
+  <div class="vlinks">${v.youtube ? `<a href="${esc(v.youtube)}" target="_blank" rel="noopener">▶ Assistir no YouTube</a>` : ""}<a href="#produtos" onclick="estado.q='';estado.soVideo=true;document.getElementById('soVideo').checked=true;desenhar()">Ver todos os produtos dos vídeos</a></div>
+</article>`).join("") || '<div class="empty">Os vídeos aparecem aqui assim que forem publicados.</div>';
 
-/* ---------- render ---------- */
-function renderBar(){
-  const bar = document.getElementById('adminbar'); if(!bar) return;
-  bar.replaceChildren(
-    h('span',{class:'msg', text: saving ? 'Publicando…' : dirty ? 'Alterações não publicadas' : editing ? 'Modo edição' : 'Só você vê esta barra'}),
-    h('button',{class:'btn sm', onclick:()=>{ editing=!editing; render(); window.scrollTo(0,0); }, text: editing ? 'Ver como visitante' : 'Editar vitrine'}),
-    dirty ? h('button',{class:'btn sm primary', disabled:saving, onclick:publicar, text:'Publicar alterações'}) : '');
-}
-function render(){
-  const app = document.getElementById('app');
-  app.replaceChildren(h('div',{class:'wrap'}, admin ? h('div',{class:'adminbar', id:'adminbar'}) : null, ...(editing ? editView() : publicView()).filter(Boolean)));
-  renderBar();
-}
-render();
-if(location.hash.startsWith('#v-')){ const el = document.getElementById(location.hash.slice(1)); if(el) el.scrollIntoView(); }
-window.addEventListener('beforeunload', e=>{ if(dirty){ e.preventDefault(); e.returnValue=''; } });
-
-(async()=>{
-  const c = window.claude; if(!c || typeof c.use!=='function') return;
-  const [u, a] = await Promise.all([c.use('user').catch(()=>null), c.use('artifact').catch(()=>null)]);
-  let can = false; try{ can = !!(u && await u.canEdit()); }catch(e){}
-  if(a && can){ art = a; admin = true; render(); }
-})();
+desenhar();
+if (location.hash.startsWith("#v-")) document.getElementById(location.hash.slice(1))?.scrollIntoView();
 </script>
-</body></html>
+</body>
+</html>
