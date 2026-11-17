@@ -64,3 +64,5 @@ Disallow: /tomada-inteligente-10a-w
 Disallow: /prumo-de-centro-profissi
 Disallow: /regua-de-corte-2m-alumin
 Disallow: /midia/
+
+Sitemap: https://achadinhosdaobra.github.io/sitemap.xml
